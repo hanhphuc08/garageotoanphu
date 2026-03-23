@@ -177,7 +177,7 @@ function ServiceCeramicPage() {
             </div>
             <div className="mt-6 flex items-center gap-3 rounded-xl border border-accent-red/30 bg-accent-red/10 px-4 py-3 text-slate-900">
               <span className="material-symbols-outlined text-accent-red">call</span>
-              <p className="text-sm font-semibold md:text-base">Hotline: 0274 3800 940 - 0981 946 652 - 0969 757 101 - 0938 981 978</p>
+              <p className="text-sm font-semibold md:text-base">Hotline: 0387 389 164 - 0386 117 165 - 0274 3800 940 - 0981 946 652</p>
             </div>
           </div>
         </section>
@@ -234,9 +234,9 @@ function ServiceCeramicPage() {
               <h2 className="text-2xl font-black text-white sm:text-4xl">Bạn chưa chọn được gói phù hợp?</h2>
               <p className="mx-auto max-w-xl text-slate-300">Hãy để chuyên gia của chúng tôi hỗ trợ bạn chọn giải pháp chăm sóc xe tốt nhất cho dòng xe của bạn.</p>
               <div className="flex flex-col justify-center gap-4 pt-4 sm:flex-row">
-                <a className="flex items-center justify-center gap-3 rounded-xl bg-accent-red px-10 py-4 text-lg font-black text-white transition-all hover:bg-red-800" href="tel:0981946652">
+                <a className="flex items-center justify-center gap-3 rounded-xl bg-accent-red px-10 py-4 text-lg font-black text-white transition-all hover:bg-red-800" href="tel:0387389164">
                   <span className="material-symbols-outlined">call</span>
-                  0981 946 652
+                  0387 389 164
                 </a>
                 <button className="flex items-center justify-center gap-3 rounded-xl border border-white/40 bg-white/15 px-10 py-4 text-lg font-black text-white transition-all hover:bg-white/25" type="button">
                   <span className="material-symbols-outlined">chat_bubble</span>

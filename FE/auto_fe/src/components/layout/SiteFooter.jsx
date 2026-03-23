@@ -53,7 +53,7 @@ function SiteFooter() {
             </li>
             <li className="flex items-center gap-2">
               <span className="material-symbols-outlined text-lg text-primary">call</span>
-              <span>0274 3800 940 - 0981 946 652 - 0969 757 101 - 0938 981 978</span>
+              <span>0387 389 164 - 0386 117 165 - 0274 3800 940 - 0981 946 652</span>
             </li>
             <li className="flex items-center gap-2">
               <span className="material-symbols-outlined text-lg text-primary">mail</span>
@@ -68,7 +68,7 @@ function SiteFooter() {
       </div>
 
       <div className="mx-auto mt-10 max-w-7xl border-t border-slate-200 px-4 pt-6 text-center text-xs text-slate-500 sm:mt-12 sm:pt-8">
-        © 2024 Auto An Phú Premium Detailing Center. All Rights Reserved.
+        © 2026 Garage ô tô An Phú Premium Detailing Center. All Rights Reserved.
       </div>
     </footer>
   )

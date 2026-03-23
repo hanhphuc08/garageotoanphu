@@ -246,8 +246,8 @@ function App() {
                     </div>
                     <div>
                       <p className="text-xs font-bold tracking-widest text-slate-500 uppercase">Hotline đặt lịch</p>
-                      <p className="text-base font-bold tracking-tight text-slate-900 sm:text-xl">0274 3800 940 - 0981 946 652</p>
-                      <p className="text-sm font-medium text-slate-700">0969 757 101 - 0938 981 978</p>
+                      <p className="text-base font-bold tracking-tight text-slate-900 sm:text-xl">0387 389 164 - 0386 117 165</p>
+                      <p className="text-sm font-medium text-slate-700">0274 3800 940 - 0981 946 652</p>
                     </div>
                   </div>
 

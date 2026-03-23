@@ -10,7 +10,7 @@ export const aboutArticles = [
       'Garage Ô Tô An Phú là tên gọi tắt của Công ty TNHH Sửa Chữa Mua Bán Phụ Tùng Ô Tô An Phú, đặt trụ sở tại 4E/1 đường DT743, phường An Phú, thành phố Thuận An, Bình Dương.',
       'Doanh nghiệp định hướng trở thành đơn vị cung cấp giải pháp ô tô toàn diện, từ sửa chữa, bảo dưỡng, chăm sóc xe đến phụ tùng và dịch vụ hỗ trợ liên quan.',
       'Với lợi thế kinh nghiệm thực chiến và đội ngũ kỹ thuật chuyên môn cao, Garage Ô Tô An Phú chú trọng chất lượng dịch vụ, tiến độ và sự minh bạch trong tư vấn cho khách hàng.',
-      'Thông tin liên hệ chính thức theo hồ sơ năng lực: Hotline 0274 3800 940 - 0981 946 652, Website autoanphu.com.',
+      'Thông tin liên hệ hiện tại: Hotline 0387 389 164 - 0386 117 165 - 0274 3800 940 - 0981 946 652, Website autoanphu.com.',
     ],
   },
   {
