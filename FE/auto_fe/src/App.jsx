@@ -28,7 +28,7 @@ function App() {
               Premium Detailing Center
             </span>
             <h1 className="mb-4 text-3xl leading-[1.08] font-black tracking-tight text-[#191c1d] sm:mb-6 sm:text-5xl md:text-7xl">
-              Dịch vụ <span className="text-primary">Chăm sóc Xe</span> <br /> Cao cấp Auto An Phú
+              Dịch vụ <span className="text-primary">Chăm sóc Xe</span> <br /> Garage ô tô An Phú
             </h1>
             <p className="mb-8 max-w-xl text-base leading-relaxed text-slate-600 sm:mb-10 sm:text-lg">
               Nâng tầm giá trị xế yêu với công nghệ Detailing chuẩn quốc tế. Tỉ mỉ trong từng chi tiết, cam kết vẻ đẹp hoàn mỹ và sự bảo vệ tối ưu.
