@@ -1,75 +1,86 @@
 import { Link } from 'react-router-dom'
 import SiteFooter from './components/layout/SiteFooter.jsx'
 import SiteHeader from './components/layout/SiteHeader.jsx'
+import usePageSeo from './hooks/usePageSeo.js'
 import { newsArticles } from './data/newsArticles.js'
 
 function App() {
   const latestNews = newsArticles.slice(0, 3)
+  const heroImage =
+    'https://lh3.googleusercontent.com/aida-public/AB6AXuAFhK_RSmqb7Byk69P4hA7INEINN4LjwIfICif3jm4OnCEM2rKFLjlX7tiKqVSlqUUMK4Ju8F9PYWhLixtF-XZT7nxE_yem6Uvgz0TcMdR5ea4zZcCSFatwO-DKX7Gr1g-jYzjdEbioLgso5lU2Wk54BYkOrgf8bMkAO57ux8AvTm5rEJtzsjiRl9np1K7-ffMPzzYL2ngfX4YX_PzrFh4GYXVTAlllnXj8ZbB7sKb0pMkfE64qAgk1K7wA6J6_l2osIf0czSesCNs'
+  const promoBannerImage = '/promo-khuyen-mai.jpg'
+
+  usePageSeo({
+    title: 'Auto An Phú | Hệ Thống Chăm Sóc Xe Cao Cấp',
+    description:
+      'Auto An Phú cung cấp dịch vụ chăm sóc xe chuyên nghiệp: phủ Ceramic, vệ sinh nội thất, đánh bóng sơn và đặt lịch nhanh trực tuyến.',
+    canonical: '/',
+  })
 
   return (
-    <div className="bg-background-dark font-display text-slate-100 antialiased">
+    <div className="bg-background-light font-display text-[#191c1d] antialiased">
       <SiteHeader />
 
-      <section className="relative flex min-h-screen items-center overflow-hidden pt-20">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 z-10 bg-gradient-to-r from-background-dark via-background-dark/60 to-transparent" />
-          <div
-            className="h-full w-full bg-cover bg-center"
-            style={{
-              backgroundImage:
-                "url('https://lh3.googleusercontent.com/aida-public/AB6AXuCmu7FRnAJG59blxCHTMIKYSh_vSm6hWoHUzTok1TEn2YRYq7m11jTdmR7oH5tinATSrxfpoDLaJ8PSwrSNPNz5NZb3df3GV-2fEMRzJVx4mjj5ZzK27c5shviOwUtYVUN6yh3pkaCZ4GbZ0ScDSXsAiFPUcAx37qp1ibwvEGjy6IXhJvMJ2wgo6nmy5VdjfExP0X_C6mkaVFR-2YnbSsPIHvb5MZFa-rHKSSTqvgpudAxqhA6wugz72AGPCRSg1SMOOFhy90--3fo')",
-            }}
-          />
-        </div>
-        <div className="container relative z-20 mx-auto px-4 sm:px-6">
-          <div className="max-w-3xl">
-            <span className="mb-6 inline-block rounded-full border border-primary/30 bg-primary/20 px-4 py-1 text-xs font-bold uppercase tracking-[0.2em] text-primary">
-              Premium Garage Services
+      <section className="relative min-h-[620px] overflow-hidden bg-[#f8f9fa] pt-20 lg:min-h-[870px] lg:pt-24">
+        <div className="mx-auto grid h-full max-w-7xl grid-cols-1 items-center gap-8 px-4 py-8 sm:px-6 sm:py-12 lg:grid-cols-2">
+          <div className="z-10">
+            <span className="mb-4 inline-block rounded-full border border-primary/25 bg-primary/5 px-3 py-1.5 text-[10px] font-bold tracking-[0.18em] text-accent-green uppercase sm:px-4 sm:py-2 sm:text-[11px]">
+              Premium Detailing Center
             </span>
-            <h1 className="text-gradient mb-8 overflow-visible pt-3 text-4xl leading-[1.25] font-black uppercase italic sm:text-5xl sm:leading-[1.28] md:pt-4 md:text-7xl lg:text-8xl">
-              NÂNG TẦM <br />TRẢI NGHIỆM <br />LÁI XE
+            <h1 className="mb-4 text-3xl leading-[1.08] font-black tracking-tight text-[#191c1d] sm:mb-6 sm:text-5xl md:text-7xl">
+              Dịch vụ <span className="text-primary">Chăm sóc Xe</span> <br /> Cao cấp Auto An Phú
             </h1>
-            <p className="mb-10 max-w-xl text-lg leading-relaxed text-slate-400 md:text-xl">
-              Đẳng cấp dịch vụ chăm sóc ô tô toàn diện. Chúng tôi kết hợp công nghệ hiện đại cùng sự tận tâm để xế yêu của bạn luôn như mới.
+            <p className="mb-8 max-w-xl text-base leading-relaxed text-slate-600 sm:mb-10 sm:text-lg">
+              Nâng tầm giá trị xế yêu với công nghệ Detailing chuẩn quốc tế. Tỉ mỉ trong từng chi tiết, cam kết vẻ đẹp hoàn mỹ và sự bảo vệ tối ưu.
             </p>
-            <div className="flex flex-col gap-4 sm:flex-row">
-              <a
-                className="rounded-lg bg-accent-red px-10 py-5 text-base font-black uppercase tracking-widest text-white shadow-2xl shadow-accent-red/20 transition-transform hover:-translate-y-1"
-                href="#home-contact-booking"
-              >
+            <div className="flex flex-wrap gap-3 sm:gap-4">
+              <a className="rounded-md bg-primary px-6 py-3 text-sm font-black tracking-wider text-white uppercase shadow-lg shadow-primary/20 transition-all hover:brightness-110 sm:px-8 sm:py-4 sm:text-base sm:tracking-widest" href="#home-contact-booking">
                 Đặt lịch ngay
               </a>
               <Link
-                className="rounded-lg border border-white/10 bg-white/5 px-10 py-5 text-base font-bold text-white backdrop-blur-md transition-colors hover:bg-white/10"
+                className="rounded-md border-2 border-accent-green px-6 py-3 text-sm font-bold text-accent-green transition-all hover:bg-accent-green hover:text-white sm:px-8 sm:py-4 sm:text-base"
                 to="/dich-vu/bang-gia"
               >
-                Khám phá dịch vụ
+                Xem bảng giá
               </Link>
             </div>
+          </div>
+
+          <div className="relative overflow-hidden rounded-xl shadow-2xl lg:h-[716px]">
+            <img alt="Premium car detailing process" className="h-full w-full object-cover" src={heroImage} />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent" />
           </div>
         </div>
       </section>
 
-      <section className="relative bg-background-dark py-32" id="services">
-        <div className="container mx-auto px-6">
-          <div className="mb-20 flex flex-col items-end justify-between gap-8 md:flex-row">
+      <section className="bg-[#f8f9fa] py-3 sm:py-4">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <a className="block overflow-hidden rounded-2xl shadow-lg" href="#home-contact-booking">
+            <img alt="Banner khuyến mãi Auto An Phú" className="h-auto w-full object-contain" src={promoBannerImage} />
+          </a>
+        </div>
+      </section>
+
+      <section className="relative bg-[#f8f9fa] py-14 sm:py-20 lg:py-24" id="services">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="mb-10 flex flex-col items-start justify-between gap-5 sm:mb-16 md:flex-row md:items-end md:gap-8">
             <div>
-              <h2 className="mb-4 text-4xl font-black uppercase italic md:text-5xl">Dịch vụ chuyên nghiệp</h2>
+              <h2 className="mb-3 text-3xl font-black tracking-tight text-slate-900 sm:mb-4 sm:text-4xl md:text-5xl">Dịch vụ chuyên nghiệp</h2>
               <div className="h-1.5 w-24 bg-primary" />
             </div>
-            <p className="max-w-md text-slate-400">
+            <p className="max-w-md text-sm text-slate-600 sm:text-base">
               Tiêu chuẩn chăm sóc xe hạng sang với quy trình khép kín và thiết bị tối tân nhất hiện nay.
             </p>
           </div>
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            <div className="liquid-glass group rounded-2xl p-8">
-              <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-xl bg-primary/10 transition-colors group-hover:bg-primary">
-                <span className="material-symbols-outlined text-4xl text-primary transition-colors group-hover:text-white">cleaning_services</span>
+            <div className="liquid-glass group rounded-2xl p-5 sm:p-8">
+              <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 transition-colors group-hover:bg-primary sm:mb-8 sm:h-16 sm:w-16">
+                <span className="material-symbols-outlined text-4xl text-primary transition-colors group-hover:text-white">shield</span>
               </div>
-              <h3 className="mb-4 text-2xl font-bold">Vệ sinh khoang máy</h3>
-              <p className="mb-8 leading-relaxed text-slate-400">
-                Làm sạch sâu các chi tiết máy bằng công nghệ hơi nước nóng, bảo vệ linh kiện điện tử.
+              <h3 className="mb-3 text-xl font-bold text-slate-900 sm:mb-4 sm:text-2xl">Phủ Ceramic Pro</h3>
+              <p className="mb-5 text-sm leading-relaxed text-slate-600 sm:mb-8 sm:text-base">
+                Công nghệ phủ gốm tiên tiến giúp tăng độ bóng sâu, chống bám bẩn và bảo vệ nước sơn bền lâu.
               </p>
               <div className="mb-6 aspect-video overflow-hidden rounded-xl">
                 <div
@@ -82,13 +93,13 @@ function App() {
               </div>
             </div>
 
-            <div className="liquid-glass group rounded-2xl p-8">
-              <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-xl bg-primary/10 transition-colors group-hover:bg-primary">
-                <span className="material-symbols-outlined text-4xl text-primary transition-colors group-hover:text-white">shield</span>
+            <div className="liquid-glass group rounded-2xl p-5 sm:p-8">
+              <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 transition-colors group-hover:bg-primary sm:mb-8 sm:h-16 sm:w-16">
+                <span className="material-symbols-outlined text-4xl text-primary transition-colors group-hover:text-white">content_cut</span>
               </div>
-              <h3 className="mb-4 text-2xl font-bold">Phủ gầm chống rỉ sét</h3>
-              <p className="mb-8 leading-relaxed text-slate-400">
-                Lớp bảo vệ hoàn hảo cho khung gầm, chống ăn mòn từ muối biển và tác động môi trường.
+              <h3 className="mb-3 text-xl font-bold text-slate-900 sm:mb-4 sm:text-2xl">Dán Film PPF</h3>
+              <p className="mb-5 text-sm leading-relaxed text-slate-600 sm:mb-8 sm:text-base">
+                Bảo vệ bề mặt sơn khỏi đá văng, tia UV và các tác động ngoại lực trong quá trình sử dụng hàng ngày.
               </p>
               <div className="mb-6 aspect-video overflow-hidden rounded-xl">
                 <div
@@ -101,13 +112,13 @@ function App() {
               </div>
             </div>
 
-            <div className="liquid-glass group rounded-2xl p-8">
-              <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-xl bg-primary/10 transition-colors group-hover:bg-primary">
-                <span className="material-symbols-outlined text-4xl text-primary transition-colors group-hover:text-white">car_repair</span>
+            <div className="liquid-glass group rounded-2xl p-5 sm:p-8">
+              <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 transition-colors group-hover:bg-primary sm:mb-8 sm:h-16 sm:w-16">
+                <span className="material-symbols-outlined text-4xl text-primary transition-colors group-hover:text-white">auto_fix_high</span>
               </div>
-              <h3 className="mb-4 text-2xl font-bold">Phủ Ceramic xế yêu</h3>
-              <p className="mb-8 leading-relaxed text-slate-400">
-                Tạo hiệu ứng lá sen, bảo vệ nước sơn bóng bẩy như gương dưới mọi điều kiện thời tiết.
+              <h3 className="mb-3 text-xl font-bold text-slate-900 sm:mb-4 sm:text-2xl">Vệ sinh nội thất</h3>
+              <p className="mb-5 text-sm leading-relaxed text-slate-600 sm:mb-8 sm:text-base">
+                Làm sạch sâu khoang nội thất, khử mùi và dưỡng vật liệu da/nhựa giúp không gian xe luôn như mới.
               </p>
               <div className="mb-6 aspect-video overflow-hidden rounded-xl">
                 <div
@@ -123,8 +134,8 @@ function App() {
         </div>
       </section>
 
-      <section className="relative py-32" id="about">
-        <div className="container mx-auto grid grid-cols-1 items-center gap-20 px-6 lg:grid-cols-2">
+      <section className="relative bg-[#f3f4f5] py-14 sm:py-20 lg:py-24" id="about">
+        <div className="container mx-auto grid grid-cols-1 items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-20">
           <div className="relative">
             <div className="aspect-[4/5] overflow-hidden rounded-3xl shadow-2xl">
               <div
@@ -141,30 +152,30 @@ function App() {
             </div>
           </div>
           <div>
-            <h2 className="mb-8 text-4xl font-black uppercase italic md:text-5xl">Uy tín &amp; <br />Công nghệ vượt trội</h2>
-            <p className="mb-8 text-lg leading-relaxed text-slate-400">
+            <h2 className="mb-5 text-3xl font-black tracking-tight text-slate-900 sm:mb-8 sm:text-4xl md:text-5xl">Uy tín &amp; <br />Công nghệ vượt trội</h2>
+            <p className="mb-6 text-base leading-relaxed text-slate-600 sm:mb-8 sm:text-lg">
               Auto An Phú tự hào là điểm đến tin cậy của cộng đồng yêu xe tại địa phương. Với đội ngũ kỹ thuật viên được đào tạo bài bản cùng hệ thống máy móc nhập khẩu từ Đức và Mỹ, chúng tôi cam kết mang lại sự an tâm tuyệt đối cho khách hàng.
             </p>
-            <div className="mb-12 grid grid-cols-2 gap-6">
+            <div className="mb-8 grid grid-cols-1 gap-4 sm:mb-12 sm:grid-cols-2 sm:gap-6">
               <div className="flex items-center gap-4">
                 <span className="material-symbols-outlined text-primary">verified</span>
-                <span className="font-bold">Đội ngũ chuyên nghiệp</span>
+                <span className="font-bold text-slate-900">Đội ngũ chuyên nghiệp</span>
               </div>
               <div className="flex items-center gap-4">
                 <span className="material-symbols-outlined text-primary">precision_manufacturing</span>
-                <span className="font-bold">Thiết bị hiện đại</span>
+                <span className="font-bold text-slate-900">Thiết bị hiện đại</span>
               </div>
               <div className="flex items-center gap-4">
                 <span className="material-symbols-outlined text-primary">history</span>
-                <span className="font-bold">Bảo hành dài hạn</span>
+                <span className="font-bold text-slate-900">Bảo hành dài hạn</span>
               </div>
               <div className="flex items-center gap-4">
                 <span className="material-symbols-outlined text-primary">thumb_up</span>
-                <span className="font-bold">Hỗ trợ 24/7</span>
+                <span className="font-bold text-slate-900">Hỗ trợ 24/7</span>
               </div>
             </div>
             <button
-              className="rounded-lg bg-primary px-8 py-4 font-bold tracking-widest text-white uppercase transition-all hover:bg-primary/90"
+              className="rounded-lg bg-primary px-6 py-3 text-sm font-bold tracking-wider text-white uppercase transition-all hover:bg-primary/90 sm:px-8 sm:py-4 sm:text-base sm:tracking-widest"
               type="button"
             >
               Tìm hiểu thêm
@@ -173,16 +184,16 @@ function App() {
         </div>
       </section>
 
-      <section className="bg-[#0d1411] py-32" id="news">
-        <div className="container mx-auto px-6">
-          <div className="mb-16 flex items-end justify-between">
-            <h2 className="text-4xl font-black uppercase italic md:text-5xl">Tin tức mới nhất</h2>
-            <Link className="font-bold text-primary hover:underline" to="/tin-tuc">Xem tất cả</Link>
+      <section className="bg-[#ffffff] py-14 sm:py-20 lg:py-24" id="news">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="mb-10 flex items-end justify-between sm:mb-16">
+            <h2 className="text-3xl font-black tracking-tight text-slate-900 sm:text-4xl md:text-5xl">Tin tức mới nhất</h2>
+            <Link className="text-sm font-bold text-primary hover:underline sm:text-base" to="/tin-tuc">Xem tất cả</Link>
           </div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {latestNews.map((article) => (
-              <Link key={article.slug} to={`/tin-tuc/${article.slug}`} className="group block">
-                <article>
+              <Link key={article.slug} to={`/tin-tuc/${article.slug}`} className="group block overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
+                <article className="p-4">
                   <div className="mb-6 aspect-[16/10] overflow-hidden rounded-2xl">
                     <img
                       alt={article.title}
@@ -191,8 +202,8 @@ function App() {
                     />
                   </div>
                   <span className="mb-3 block text-sm font-bold tracking-widest text-primary uppercase">{article.category}</span>
-                  <h3 className="mb-4 text-xl leading-tight font-bold transition-colors group-hover:text-primary">{article.title}</h3>
-                  <p className="line-clamp-2 text-slate-500">{article.excerpt}</p>
+                  <h3 className="mb-4 text-xl leading-tight font-bold text-slate-900 transition-colors group-hover:text-primary">{article.title}</h3>
+                  <p className="line-clamp-2 text-slate-600">{article.excerpt}</p>
                 </article>
               </Link>
             ))}
@@ -200,93 +211,93 @@ function App() {
         </div>
       </section>
 
-      <section className="bg-background-dark py-24" id="home-contact-booking">
-        <div className="mx-auto max-w-7xl px-6">
+      <section className="bg-[#f3f4f5] py-14 sm:py-20 lg:py-24" id="home-contact-booking">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="mb-10">
-            <h2 className="mb-4 text-4xl font-black tracking-tighter text-slate-100 uppercase md:text-5xl">Liên hệ &amp; Đặt lịch</h2>
+            <h2 className="mb-3 text-3xl font-black tracking-tight text-slate-900 uppercase sm:mb-4 sm:text-4xl md:text-5xl">Liên hệ &amp; Đặt lịch</h2>
             <div className="mb-6 h-1.5 w-24 rounded-full bg-primary" />
-            <p className="max-w-2xl text-lg text-slate-400 italic">
+            <p className="max-w-2xl text-base text-slate-600 italic sm:text-lg">
               Đặt lịch nhanh ngay trên trang chủ để được tư vấn và sắp xếp thời gian phù hợp nhất cho xe của bạn.
             </p>
           </div>
 
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
             <div className="flex flex-col gap-8 lg:col-span-5">
-              <div className="rounded-xl border border-primary/20 bg-primary/10 p-8">
-                <h3 className="mb-6 flex items-center gap-2 text-xl font-bold text-slate-100">
+              <div className="rounded-xl border border-primary/20 bg-white p-5 shadow-sm sm:p-8">
+                <h3 className="mb-6 flex items-center gap-2 text-xl font-bold text-slate-900">
                   <span className="material-symbols-outlined text-primary">contact_support</span>
                   Thông tin liên hệ
                 </h3>
 
                 <div className="space-y-6">
-                  <div className="flex gap-4">
+                  <div className="flex gap-3 sm:gap-4">
                     <div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-primary">
                       <span className="material-symbols-outlined text-white">location_on</span>
                     </div>
                     <div>
-                      <p className="text-xs font-bold tracking-widest text-slate-400 uppercase">Địa chỉ</p>
-                      <p className="font-medium text-slate-100">Số 4E /1 Đường DT743, Khu phố 1B, phường An Phú, Thành phố Thuận An, Bình Dương</p>
+                      <p className="text-xs font-bold tracking-widest text-slate-500 uppercase">Địa chỉ</p>
+                      <p className="text-sm font-medium text-slate-800 sm:text-base">Số 4E /1 Đường DT743, Khu phố 1B, phường An Phú, Thành phố Thuận An, Bình Dương</p>
                     </div>
                   </div>
 
-                  <div className="flex gap-4">
+                  <div className="flex gap-3 sm:gap-4">
                     <div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-primary">
                       <span className="material-symbols-outlined text-white">call</span>
                     </div>
                     <div>
-                      <p className="text-xs font-bold tracking-widest text-slate-400 uppercase">Hotline đặt lịch</p>
-                      <p className="text-xl font-bold tracking-tight text-slate-100">0274 3800 940 - 0981 946 652</p>
-                      <p className="text-sm font-medium text-slate-300">0969 757 101 - 0938 981 978</p>
+                      <p className="text-xs font-bold tracking-widest text-slate-500 uppercase">Hotline đặt lịch</p>
+                      <p className="text-base font-bold tracking-tight text-slate-900 sm:text-xl">0274 3800 940 - 0981 946 652</p>
+                      <p className="text-sm font-medium text-slate-700">0969 757 101 - 0938 981 978</p>
                     </div>
                   </div>
 
-                  <div className="flex gap-4">
+                  <div className="flex gap-3 sm:gap-4">
                     <div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-primary">
                       <span className="material-symbols-outlined text-white">mail</span>
                     </div>
                     <div>
-                      <p className="text-xs font-bold tracking-widest text-slate-400 uppercase">Email hỗ trợ</p>
-                      <p className="font-medium text-slate-100">autoanphu@gmail.com</p>
+                      <p className="text-xs font-bold tracking-widest text-slate-500 uppercase">Email hỗ trợ</p>
+                      <p className="font-medium text-slate-800">autoanphu@gmail.com</p>
                     </div>
                   </div>
 
-                  <div className="flex gap-4">
+                  <div className="flex gap-3 sm:gap-4">
                     <div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-primary">
                       <span className="material-symbols-outlined text-white">language</span>
                     </div>
                     <div>
-                      <p className="text-xs font-bold tracking-widest text-slate-400 uppercase">Website</p>
-                      <p className="font-medium text-slate-100">autoanphu.com</p>
+                      <p className="text-xs font-bold tracking-widest text-slate-500 uppercase">Website</p>
+                      <p className="font-medium text-slate-800">autoanphu.com</p>
                     </div>
                   </div>
                 </div>
               </div>
 
               <a
-                className="group relative block h-[280px] w-full overflow-hidden rounded-xl border border-primary/20 grayscale contrast-125 shadow-2xl"
+                className="group relative block h-[220px] w-full overflow-hidden rounded-xl border border-primary/20 grayscale contrast-125 shadow-2xl sm:h-[280px]"
                 href="https://maps.app.goo.gl/iBLoGoeHVtrTeW9w7"
                 rel="noreferrer"
                 target="_blank"
               >
                 <div className="pointer-events-none absolute inset-0 bg-primary/5" />
                 <div
-                  className="h-full w-full bg-cover bg-center bg-slate-800 transition-transform duration-500 group-hover:scale-105"
+                  className="h-full w-full bg-cover bg-center bg-slate-200 transition-transform duration-500 group-hover:scale-105"
                   style={{
                     backgroundImage:
                       "url('https://lh3.googleusercontent.com/aida-public/AB6AXuDgr7parWm49rEpw1IC5s7VxZXkaKHmzDq8hvAj8heYYuVQvBcgpTWGOofIY2UUv6nlomnvzYYEruI9HfcJlAVbzTY0589Ovkis1Icm72JuPNtSkD8fWKCHGgrJhJ23elwH1q5pqDftkW-e8jfGg7GvEYcYzj1dE_1nAU3vQkN-387kRRQhIw6f4D0yTS3O50aRw-Gb5I_q-z90wztrVSPTJFEAdBCGX9onbjgeisHez6scySNwHv-b5DmDKU7F5Jaqw6AJzpxtSCo')",
                   }}
                 />
-                <div className="absolute right-4 bottom-4 left-4 flex items-center justify-between rounded-lg border border-primary/30 bg-background-dark/90 p-3 backdrop-blur-sm">
-                  <span className="text-xs font-medium text-slate-300">Mở trong Google Maps</span>
+                <div className="absolute right-4 bottom-4 left-4 flex items-center justify-between rounded-lg border border-primary/30 bg-white/95 p-3 backdrop-blur-sm">
+                  <span className="text-xs font-medium text-slate-700">Mở trong Google Maps</span>
                   <span className="material-symbols-outlined text-sm text-primary">open_in_new</span>
                 </div>
               </a>
             </div>
 
             <div className="lg:col-span-7">
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-8 shadow-xl md:p-10">
-                <h3 className="mb-2 text-2xl font-bold text-slate-100">ĐẶT LỊCH HẸN TRỰC TUYẾN</h3>
-                <p className="mb-8 text-slate-400">Vui lòng điền thông tin để chúng tôi chuẩn bị tốt nhất.</p>
+              <div className="rounded-2xl border border-primary/20 bg-white p-5 shadow-xl sm:p-8 md:p-10">
+                <h3 className="mb-2 text-xl font-bold text-slate-900 sm:text-2xl">ĐẶT LỊCH HẸN TRỰC TUYẾN</h3>
+                <p className="mb-8 text-slate-600">Vui lòng điền thông tin để chúng tôi chuẩn bị tốt nhất.</p>
 
                 <form
                   action="https://formsubmit.co/garageotoanphu2024@gmail.com"
@@ -299,9 +310,9 @@ function App() {
                   <input type="hidden" name="_template" value="table" />
                   <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                     <div className="flex flex-col gap-2">
-                      <label className="text-sm font-semibold tracking-wider text-slate-300 uppercase">Họ và Tên</label>
+                      <label className="text-sm font-semibold tracking-wider text-slate-500 uppercase">Họ và Tên</label>
                       <input
-                        className="w-full rounded-lg border border-white/10 bg-primary/5 px-4 py-3 text-slate-100 transition-colors focus:border-primary focus:outline-none"
+                        className="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-slate-900 transition-colors focus:border-primary focus:outline-none"
                         name="Họ và tên"
                         placeholder="Nhập tên của bạn"
                         required
@@ -309,9 +320,9 @@ function App() {
                       />
                     </div>
                     <div className="flex flex-col gap-2">
-                      <label className="text-sm font-semibold tracking-wider text-slate-300 uppercase">Số điện thoại</label>
+                      <label className="text-sm font-semibold tracking-wider text-slate-500 uppercase">Số điện thoại</label>
                       <input
-                        className="w-full rounded-lg border border-white/10 bg-primary/5 px-4 py-3 text-slate-100 transition-colors focus:border-primary focus:outline-none"
+                        className="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-slate-900 transition-colors focus:border-primary focus:outline-none"
                         name="Số điện thoại"
                         placeholder="090..."
                         required
@@ -321,36 +332,36 @@ function App() {
                   </div>
 
                   <div className="flex flex-col gap-2">
-                    <label className="text-sm font-semibold tracking-wider text-slate-300 uppercase">Chọn dịch vụ</label>
-                    <select className="w-full appearance-none rounded-lg border border-white/10 bg-primary/5 px-4 py-3 text-slate-100 focus:border-primary focus:outline-none" name="Dịch vụ" required>
-                      <option className="bg-background-dark">Rửa xe chi tiết</option>
-                      <option className="bg-background-dark">Chăm sóc cơ bản</option>
-                      <option className="bg-background-dark">Chăm sóc khoang máy</option>
-                      <option className="bg-background-dark">Vệ sinh nội thất chi tiết</option>
-                      <option className="bg-background-dark">Hiệu chỉnh bề mặt sơn</option>
+                    <label className="text-sm font-semibold tracking-wider text-slate-500 uppercase">Chọn dịch vụ</label>
+                    <select className="w-full appearance-none rounded-lg border border-slate-300 bg-white px-4 py-3 text-slate-900 focus:border-primary focus:outline-none" name="Dịch vụ" required>
+                      <option>Rửa xe chi tiết</option>
+                      <option>Chăm sóc cơ bản</option>
+                      <option>Chăm sóc khoang máy</option>
+                      <option>Vệ sinh nội thất chi tiết</option>
+                      <option>Hiệu chỉnh bề mặt sơn</option>
                     </select>
                   </div>
 
                   <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                     <div className="flex flex-col gap-2">
-                      <label className="text-sm font-semibold tracking-wider text-slate-300 uppercase">Ngày hẹn</label>
-                      <input className="w-full rounded-lg border border-white/10 bg-primary/5 px-4 py-3 text-slate-100 transition-colors focus:border-primary focus:outline-none" name="Ngày hẹn" required type="date" />
+                      <label className="text-sm font-semibold tracking-wider text-slate-500 uppercase">Ngày hẹn</label>
+                      <input className="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-slate-900 transition-colors focus:border-primary focus:outline-none" name="Ngày hẹn" required type="date" />
                     </div>
                     <div className="flex flex-col gap-2">
-                      <label className="text-sm font-semibold tracking-wider text-slate-300 uppercase">Khung giờ</label>
-                      <select className="w-full appearance-none rounded-lg border border-white/10 bg-primary/5 px-4 py-3 text-slate-100 focus:border-primary focus:outline-none" name="Khung giờ" required>
-                        <option className="bg-background-dark">08:00 - 10:00</option>
-                        <option className="bg-background-dark">10:00 - 12:00</option>
-                        <option className="bg-background-dark">13:30 - 15:30</option>
-                        <option className="bg-background-dark">15:30 - 17:30</option>
+                      <label className="text-sm font-semibold tracking-wider text-slate-500 uppercase">Khung giờ</label>
+                      <select className="w-full appearance-none rounded-lg border border-slate-300 bg-white px-4 py-3 text-slate-900 focus:border-primary focus:outline-none" name="Khung giờ" required>
+                        <option>08:00 - 10:00</option>
+                        <option>10:00 - 12:00</option>
+                        <option>13:30 - 15:30</option>
+                        <option>15:30 - 17:30</option>
                       </select>
                     </div>
                   </div>
 
                   <div className="flex flex-col gap-2">
-                    <label className="text-sm font-semibold tracking-wider text-slate-300 uppercase">Thông tin xe (Hãng xe, Dòng xe)</label>
+                    <label className="text-sm font-semibold tracking-wider text-slate-500 uppercase">Thông tin xe (Hãng xe, Dòng xe)</label>
                     <input
-                      className="w-full rounded-lg border border-white/10 bg-primary/5 px-4 py-3 text-slate-100 transition-colors focus:border-primary focus:outline-none"
+                      className="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-slate-900 transition-colors focus:border-primary focus:outline-none"
                       name="Thông tin xe"
                       placeholder="VD: Toyota Camry 2022, Biển số 51G-12345"
                       required
@@ -359,9 +370,9 @@ function App() {
                   </div>
 
                   <div className="flex flex-col gap-2">
-                    <label className="text-sm font-semibold tracking-wider text-slate-300 uppercase">Yêu cầu thêm (nếu có)</label>
+                    <label className="text-sm font-semibold tracking-wider text-slate-500 uppercase">Yêu cầu thêm (nếu có)</label>
                     <textarea
-                      className="custom-scrollbar w-full resize-none rounded-lg border border-white/10 bg-primary/5 px-4 py-3 text-slate-100 transition-colors focus:border-primary focus:outline-none"
+                      className="custom-scrollbar w-full resize-none rounded-lg border border-slate-300 bg-white px-4 py-3 text-slate-900 transition-colors focus:border-primary focus:outline-none"
                       name="Yêu cầu thêm"
                       placeholder="Mô tả thêm tình trạng xe hoặc yêu cầu đặc biệt"
                       rows="3"
@@ -369,7 +380,7 @@ function App() {
                   </div>
 
                   <div className="pt-4">
-                    <button className="flex w-full items-center justify-center gap-3 rounded-xl bg-accent-red py-4 text-lg font-black tracking-widest text-white uppercase shadow-lg shadow-accent-red/20 transition-all hover:bg-[#b0001c]" type="submit">
+                    <button className="flex w-full items-center justify-center gap-3 rounded-xl bg-primary py-3.5 text-base font-black tracking-wider text-white uppercase shadow-lg shadow-primary/20 transition-all hover:bg-accent-red sm:py-4 sm:text-lg sm:tracking-widest" type="submit">
                       XÁC NHẬN ĐẶT LỊCH
                       <span className="material-symbols-outlined">send</span>
                     </button>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://garageotoanphu.vercel.app/sitemap.xml

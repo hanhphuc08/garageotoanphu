@@ -1,11 +1,19 @@
 import { Link } from 'react-router-dom'
 import SiteFooter from '../components/layout/SiteFooter.jsx'
 import SiteHeader from '../components/layout/SiteHeader.jsx'
+import usePageSeo from '../hooks/usePageSeo.js'
 import { aboutArticles } from '../data/aboutArticles.js'
 
 function AboutPage() {
+  usePageSeo({
+    title: 'Giới Thiệu | Auto An Phú',
+    description:
+      'Giới thiệu về Auto An Phú: đội ngũ kỹ thuật, quy trình chăm sóc xe chuyên nghiệp và các bài viết kiến thức hữu ích.',
+    canonical: '/gioi-thieu',
+  })
+
   return (
-    <div className="min-h-screen bg-background-dark font-display text-slate-100">
+    <div className="min-h-screen bg-background-light font-display text-slate-900">
       <SiteHeader />
 
       <main className="px-4 pt-24 pb-14 sm:px-6 md:px-10">

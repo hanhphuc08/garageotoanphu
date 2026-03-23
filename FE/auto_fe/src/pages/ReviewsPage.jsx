@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import SiteFooter from '../components/layout/SiteFooter.jsx'
 import SiteHeader from '../components/layout/SiteHeader.jsx'
+import usePageSeo from '../hooks/usePageSeo.js'
 
 function ReviewsPage() {
   const featuredReviews = [
@@ -73,14 +74,21 @@ function ReviewsPage() {
     },
   ]
 
+  usePageSeo({
+    title: 'Đánh Giá Khách Hàng | Auto An Phú',
+    description:
+      'Xem đánh giá thực tế từ khách hàng đã sử dụng dịch vụ chăm sóc và detailing tại Auto An Phú.',
+    canonical: '/danh-gia',
+  })
+
   return (
-    <div className="bg-background-dark font-display text-slate-100 antialiased">
+    <div className="bg-background-light font-display text-slate-900 antialiased">
       <SiteHeader />
 
       <main className="w-full pt-20">
         <section className="relative overflow-hidden py-14 sm:py-20">
           <div className="absolute inset-0 z-0">
-            <div className="absolute inset-0 z-10 bg-gradient-to-b from-background-dark/60 to-background-dark" />
+            <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#f8f9fa]/60 to-[#f8f9fa]" />
             <div
               className="h-full w-full bg-cover bg-center"
               style={{
@@ -93,12 +101,12 @@ function ReviewsPage() {
             <h1 className="mb-6 text-3xl font-black tracking-tight sm:text-4xl md:text-6xl">
               Trải Nghiệm <span className="text-crimson">Đẳng Cấp</span> Từ Khách Hàng
             </h1>
-            <p className="mx-auto mb-12 max-w-2xl text-base text-slate-400 sm:text-lg">
+            <p className="mx-auto mb-12 max-w-2xl text-base text-slate-600 sm:text-lg">
               Hơn 1000+ chủ xe hạng sang đã tin tưởng giao phó xế cưng cho đội ngũ chuyên gia tại Auto An Phú.
             </p>
             <div className="mx-auto grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-3">
               <div className="glass-card rounded-xl border-l-4 border-primary p-6 sm:p-8">
-                <div className="mb-2 text-4xl font-black text-slate-100 sm:text-5xl">4.9/5</div>
+                <div className="mb-2 text-4xl font-black text-slate-900 sm:text-5xl">4.9/5</div>
                 <div className="mb-2 flex justify-center gap-1 text-yellow-500">
                   <span className="material-symbols-outlined fill-1">star</span>
                   <span className="material-symbols-outlined fill-1">star</span>
@@ -106,21 +114,21 @@ function ReviewsPage() {
                   <span className="material-symbols-outlined fill-1">star</span>
                   <span className="material-symbols-outlined fill-1">star_half</span>
                 </div>
-                <p className="text-sm tracking-widest text-slate-400 uppercase">Điểm đánh giá trung bình</p>
+                <p className="text-sm tracking-widest text-slate-600 uppercase">Điểm đánh giá trung bình</p>
               </div>
               <div className="glass-card rounded-xl border-l-4 border-crimson p-6 sm:p-8">
-                <div className="mb-2 text-4xl font-black text-slate-100 sm:text-5xl">125</div>
+                <div className="mb-2 text-4xl font-black text-slate-900 sm:text-5xl">125</div>
                 <div className="mb-2 flex justify-center gap-1 text-crimson">
                   <span className="material-symbols-outlined">rate_review</span>
                 </div>
-                <p className="text-sm tracking-widest text-slate-400 uppercase">Đánh giá đã xác thực</p>
+                <p className="text-sm tracking-widest text-slate-600 uppercase">Đánh giá đã xác thực</p>
               </div>
               <div className="glass-card rounded-xl border-l-4 border-primary p-6 sm:p-8">
-                <div className="mb-2 text-4xl font-black text-slate-100 sm:text-5xl">99%</div>
+                <div className="mb-2 text-4xl font-black text-slate-900 sm:text-5xl">99%</div>
                 <div className="mb-2 flex justify-center gap-1 text-primary">
                   <span className="material-symbols-outlined">verified_user</span>
                 </div>
-                <p className="text-sm tracking-widest text-slate-400 uppercase">Khách hàng hài lòng</p>
+                <p className="text-sm tracking-widest text-slate-600 uppercase">Khách hàng hài lòng</p>
               </div>
             </div>
           </div>
@@ -129,11 +137,11 @@ function ReviewsPage() {
         <section className="mx-auto max-w-7xl px-4 py-12 sm:py-16">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {featuredReviews.map((item) => (
-              <div key={item.name} className="glass-card flex h-full flex-col rounded-xl border border-white/10 p-6 transition-colors hover:border-primary/40">
+              <div key={item.name} className="glass-card flex h-full flex-col rounded-xl border border-slate-200 p-6 transition-colors hover:border-primary/40">
                 <div className="mb-4 flex items-start justify-between gap-3">
                   <div>
-                    <h4 className="font-bold text-slate-100">{item.name}</h4>
-                    <p className="text-xs text-slate-500 italic">Google Review • {item.time}</p>
+                    <h3 className="font-bold text-slate-900">{item.name}</h3>
+                    <p className="text-xs text-slate-600 italic">Google Review • {item.time}</p>
                   </div>
                   <div className="flex text-yellow-500">
                     {Array.from({ length: 5 }).map((_, i) => (
@@ -141,7 +149,7 @@ function ReviewsPage() {
                     ))}
                   </div>
                 </div>
-                <p className="text-sm leading-relaxed text-slate-300">“{item.review}”</p>
+                <p className="text-sm leading-relaxed text-slate-700">“{item.review}”</p>
               </div>
             ))}
           </div>

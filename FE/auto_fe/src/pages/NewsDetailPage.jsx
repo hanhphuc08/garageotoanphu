@@ -1,18 +1,51 @@
 import { Link, Navigate, useParams } from 'react-router-dom'
 import SiteFooter from '../components/layout/SiteFooter.jsx'
 import SiteHeader from '../components/layout/SiteHeader.jsx'
+import usePageSeo from '../hooks/usePageSeo.js'
+import { toAbsoluteUrl } from '../utils/siteUrl.js'
 import { newsArticles } from '../data/newsArticles.js'
 
 function NewsDetailPage() {
   const { slug } = useParams()
   const article = newsArticles.find((item) => item.slug === slug)
 
+  usePageSeo({
+    title: article ? `${article.title} | Auto An Phú` : 'Tin Tức | Auto An Phú',
+    description: article?.excerpt || 'Bài viết tin tức mới nhất từ Auto An Phú.',
+    canonical: article ? `/tin-tuc/${article.slug}` : '/tin-tuc',
+    image: article?.image || '/logo.png?v=3',
+    type: 'article',
+    structuredData: article
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'Article',
+          headline: article.title,
+          description: article.excerpt,
+          image: article.image,
+          datePublished: article.date,
+          author: {
+            '@type': 'Organization',
+            name: 'Garage Ô Tô An Phú',
+          },
+          publisher: {
+            '@type': 'Organization',
+            name: 'Garage Ô Tô An Phú',
+            logo: {
+              '@type': 'ImageObject',
+              url: toAbsoluteUrl('/logo.png'),
+            },
+          },
+          mainEntityOfPage: toAbsoluteUrl(`/tin-tuc/${article.slug}`),
+        }
+      : undefined,
+  })
+
   if (!article) {
     return <Navigate to="/tin-tuc" replace />
   }
 
   return (
-    <div className="min-h-screen bg-background-dark font-display text-slate-100">
+    <div className="min-h-screen bg-background-light font-display text-slate-900">
       <SiteHeader />
 
       <main className="px-4 pt-24 pb-14 sm:px-6 md:px-10">

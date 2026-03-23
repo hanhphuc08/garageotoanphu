@@ -1,11 +1,19 @@
 import { Link } from 'react-router-dom'
 import SiteFooter from '../components/layout/SiteFooter.jsx'
 import SiteHeader from '../components/layout/SiteHeader.jsx'
+import usePageSeo from '../hooks/usePageSeo.js'
 import { newsArticles } from '../data/newsArticles.js'
 
 function NewsPage() {
+  usePageSeo({
+    title: 'Tin Tức | Auto An Phú',
+    description:
+      'Tin tức và kinh nghiệm chăm sóc xe mới nhất từ Auto An Phú: mẹo sử dụng xe, bảo dưỡng định kỳ và thông tin dịch vụ.',
+    canonical: '/tin-tuc',
+  })
+
   return (
-    <div className="min-h-screen bg-background-dark font-display text-slate-100">
+    <div className="min-h-screen bg-background-light font-display text-slate-900">
       <SiteHeader />
 
       <main className="px-4 pt-24 pb-14 sm:px-6 md:px-10">

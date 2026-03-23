@@ -1,18 +1,51 @@
 import { Link, Navigate, useParams } from 'react-router-dom'
 import SiteFooter from '../components/layout/SiteFooter.jsx'
 import SiteHeader from '../components/layout/SiteHeader.jsx'
+import usePageSeo from '../hooks/usePageSeo.js'
+import { toAbsoluteUrl } from '../utils/siteUrl.js'
 import { aboutArticles } from '../data/aboutArticles.js'
 
 function AboutDetailPage() {
   const { slug } = useParams()
   const article = aboutArticles.find((item) => item.slug === slug)
 
+  usePageSeo({
+    title: article ? `${article.title} | Auto An Phú` : 'Giới Thiệu | Auto An Phú',
+    description: article?.excerpt || 'Bài viết giới thiệu từ Auto An Phú về chăm sóc và bảo dưỡng xe.',
+    canonical: article ? `/gioi-thieu/${article.slug}` : '/gioi-thieu',
+    image: article?.image || '/logo.png?v=3',
+    type: 'article',
+    structuredData: article
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'Article',
+          headline: article.title,
+          description: article.excerpt,
+          image: article.image,
+          datePublished: article.date,
+          author: {
+            '@type': 'Organization',
+            name: 'Garage Ô Tô An Phú',
+          },
+          publisher: {
+            '@type': 'Organization',
+            name: 'Garage Ô Tô An Phú',
+            logo: {
+              '@type': 'ImageObject',
+              url: toAbsoluteUrl('/logo.png'),
+            },
+          },
+          mainEntityOfPage: toAbsoluteUrl(`/gioi-thieu/${article.slug}`),
+        }
+      : undefined,
+  })
+
   if (!article) {
     return <Navigate to="/gioi-thieu" replace />
   }
 
   return (
-    <div className="min-h-screen bg-background-dark font-display text-slate-100">
+    <div className="min-h-screen bg-background-light font-display text-slate-900">
       <SiteHeader />
 
       <main className="px-4 pt-24 pb-14 sm:px-6 md:px-10">

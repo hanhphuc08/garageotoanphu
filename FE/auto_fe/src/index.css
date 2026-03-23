@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #004226;
-  --color-accent-red: #960018;
-  --color-crimson: #990000;
-  --color-accent-green: #7dd3a8;
-  --color-background-light: #f5f8f7;
-  --color-background-dark: #0a0f0d;
-  --color-surface-dark: #14211d;
-  --color-card-glass: rgba(255, 255, 255, 0.03);
+  --color-primary: #8d000e;
+  --color-accent-red: #ba1a20;
+  --color-crimson: #930010;
+  --color-accent-green: #29695b;
+  --color-background-light: #f8f9fa;
+  --color-background-dark: #edeeef;
+  --color-surface-dark: #ffffff;
+  --color-card-glass: rgba(255, 255, 255, 0.85);
   --font-display: "Inter", sans-serif;
 }
 
@@ -22,7 +22,8 @@
 body {
   margin: 0;
   min-width: 320px;
-  background: #0a0f0d;
+  background: #f8f9fa;
+  color: #191c1d;
 }
 
 #root {
@@ -30,19 +31,20 @@ body {
 }
 
 .liquid-glass {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(112, 121, 117, 0.18);
+  box-shadow: 0 12px 30px rgba(25, 28, 29, 0.06);
   transition: all 0.3s ease;
 }
 
 .liquid-glass:hover {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(0, 66, 38, 0.5);
+  background: #ffffff;
+  border-color: rgba(141, 0, 14, 0.35);
 }
 
 .text-gradient {
-  background: linear-gradient(to bottom right, #ffffff, #8dceb3);
+  background: linear-gradient(to bottom right, #191c1d, #8d000e);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -67,17 +69,18 @@ body {
 }
 
 .crimson-gradient {
-  background: linear-gradient(135deg, #990000 0%, #4a0000 100%);
+  background: linear-gradient(135deg, #ba1a20 0%, #8d000e 100%);
 }
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(112, 121, 117, 0.2);
+  box-shadow: 0 10px 25px rgba(25, 28, 29, 0.05);
 }
 
 .hero-gradient {
-  background: linear-gradient(180deg, rgba(0, 66, 38, 0.2) 0%, rgba(10, 20, 16, 1) 100%);
+  background: linear-gradient(180deg, rgba(141, 0, 14, 0.08) 0%, rgba(248, 249, 250, 1) 100%);
 }
 
 .custom-scrollbar::-webkit-scrollbar {
@@ -85,10 +88,10 @@ body {
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: #0f231b;
+  background: #edeeef;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #204b39;
+  background: #8d000e;
   border-radius: 10px;
 }

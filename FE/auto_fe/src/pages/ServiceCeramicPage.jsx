@@ -1,9 +1,17 @@
 import SiteFooter from '../components/layout/SiteFooter.jsx'
 import SiteHeader from '../components/layout/SiteHeader.jsx'
+import usePageSeo from '../hooks/usePageSeo.js'
 
 function ServiceCeramicPage() {
+  usePageSeo({
+    title: 'Bảng Giá Dịch Vụ | Auto An Phú',
+    description:
+      'Bảng giá dịch vụ chăm sóc xe tại Auto An Phú: rửa xe chi tiết, vệ sinh nội thất, hiệu chỉnh sơn, phủ gầm và nhiều dịch vụ khác.',
+    canonical: '/dich-vu/bang-gia',
+  })
+
   return (
-    <div className="min-h-screen bg-background-dark font-display text-slate-100">
+    <div className="min-h-screen bg-background-light font-display text-slate-900">
       <SiteHeader />
 
       <main className="min-h-screen pt-20">
@@ -12,8 +20,8 @@ function ServiceCeramicPage() {
             <span className="rounded-full bg-accent-red/20 px-4 py-1.5 text-sm font-bold tracking-widest text-accent-red uppercase">
               Premium Detailing
             </span>
-            <h2 className="text-3xl font-black tracking-tight text-white sm:text-5xl md:text-6xl">Bảng Giá Dịch Vụ</h2>
-            <p className="mx-auto max-w-2xl text-base leading-relaxed text-slate-400 md:text-xl">
+            <h1 className="text-3xl font-black tracking-tight text-slate-900 sm:text-5xl md:text-6xl">Bảng Giá Dịch Vụ</h1>
+            <p className="mx-auto max-w-2xl text-base leading-relaxed text-slate-600 md:text-xl">
               Nâng tầm giá trị và vẻ đẹp cho xế yêu với các giải pháp chăm sóc xe toàn diện theo tiêu chuẩn quốc tế.
             </p>
             <div className="flex flex-wrap justify-center gap-4 pt-4">
@@ -30,24 +38,24 @@ function ServiceCeramicPage() {
         </section>
 
         <section className="mx-auto max-w-7xl space-y-8 px-4 py-10 sm:px-6 sm:py-12">
-          <div className="rounded-2xl border border-primary/20 bg-primary/10 p-6 md:p-8">
-            <h3 className="mb-4 text-2xl font-black text-white">Loại xe áp dụng</h3>
+          <div className="rounded-2xl border border-primary/20 bg-white p-6 shadow-sm md:p-8">
+            <h2 className="mb-4 text-2xl font-black text-slate-900">Loại xe áp dụng</h2>
             <div className="flex flex-col gap-3 md:flex-row md:items-center">
-              <div className="flex items-center gap-3 rounded-xl border border-primary/20 bg-background-dark/60 px-4 py-3 text-slate-200">
+              <div className="flex items-center gap-3 rounded-xl border border-primary/20 bg-primary/5 px-4 py-3 text-slate-800">
                 <span className="material-symbols-outlined text-primary">directions_car</span>
                 Small cars, sedan 4 chỗ
               </div>
-              <div className="flex items-center gap-3 rounded-xl border border-primary/20 bg-background-dark/60 px-4 py-3 text-slate-200">
+              <div className="flex items-center gap-3 rounded-xl border border-primary/20 bg-primary/5 px-4 py-3 text-slate-800">
                 <span className="material-symbols-outlined text-primary">airport_shuttle</span>
                 Big cars, 7 chỗ, bán tải, SUV
               </div>
             </div>
           </div>
 
-          <div className="rounded-2xl border border-accent-red/40 bg-gradient-to-br from-primary/20 to-background-dark p-6 shadow-2xl shadow-accent-red/10 md:p-8">
-            <h3 className="mb-6 text-2xl font-black text-white">Dịch vụ chính</h3>
+          <div className="rounded-2xl border border-accent-red/30 bg-white p-6 shadow-sm md:p-8">
+            <h2 className="mb-6 text-2xl font-black text-slate-900">Dịch vụ chính</h2>
             <div className="overflow-x-auto rounded-xl border border-accent-red/40 ring-1 ring-accent-red/20">
-              <table className="min-w-full bg-background-dark/50 text-left text-sm text-slate-200">
+              <table className="min-w-full bg-white text-left text-sm text-slate-800">
                 <thead className="bg-accent-red text-xs font-bold tracking-wider text-white uppercase">
                   <tr>
                     <th className="px-4 py-4">Dịch vụ</th>
@@ -55,7 +63,7 @@ function ServiceCeramicPage() {
                     <th className="px-4 py-4">Big cars</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-primary/15">
+                <tbody className="divide-y divide-slate-200">
                   <tr>
                     <td className="px-4 py-4 font-semibold">Rửa xe chi tiết</td>
                     <td className="px-4 py-4">70.000</td>
@@ -86,20 +94,20 @@ function ServiceCeramicPage() {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-primary/20 bg-primary/10 p-6 md:p-8">
-            <h3 className="mb-6 text-2xl font-black text-white">Chi tiết dịch vụ</h3>
+          <div className="rounded-2xl border border-primary/20 bg-white p-6 shadow-sm md:p-8">
+            <h2 className="mb-6 text-2xl font-black text-slate-900">Chi tiết dịch vụ</h2>
             <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-              <article className="rounded-xl border border-primary/20 bg-background-dark/50 p-5">
-                <h4 className="mb-3 text-lg font-bold text-white">Rửa xe chi tiết</h4>
-                <ul className="space-y-2 text-sm text-slate-300">
+              <article className="rounded-xl border border-primary/20 bg-primary/5 p-5">
+                <h3 className="mb-3 text-lg font-bold text-slate-900">Rửa xe chi tiết</h3>
+                <ul className="space-y-2 text-sm text-slate-700">
                   <li>Rửa xịt gầm &amp; dưỡng mâm lốp</li>
                   <li>Vệ sinh nội thất khô</li>
                 </ul>
               </article>
 
-              <article className="rounded-xl border border-primary/20 bg-background-dark/50 p-5">
-                <h4 className="mb-3 text-lg font-bold text-white">Chăm sóc cơ bản</h4>
-                <ul className="space-y-2 text-sm text-slate-300">
+              <article className="rounded-xl border border-primary/20 bg-primary/5 p-5">
+                <h3 className="mb-3 text-lg font-bold text-slate-900">Chăm sóc cơ bản</h3>
+                <ul className="space-y-2 text-sm text-slate-700">
                   <li>Rửa xe chi tiết</li>
                   <li>Clay đất sét bề mặt sơn</li>
                   <li>Wax tạo bóng và bảo vệ sơn</li>
@@ -107,18 +115,18 @@ function ServiceCeramicPage() {
                 </ul>
               </article>
 
-              <article className="rounded-xl border border-primary/20 bg-background-dark/50 p-5">
-                <h4 className="mb-3 text-lg font-bold text-white">Chăm sóc khoang máy</h4>
-                <ul className="space-y-2 text-sm text-slate-300">
+              <article className="rounded-xl border border-primary/20 bg-primary/5 p-5">
+                <h3 className="mb-3 text-lg font-bold text-slate-900">Chăm sóc khoang máy</h3>
+                <ul className="space-y-2 text-sm text-slate-700">
                   <li>Vệ sinh chi tiết khoang máy</li>
                   <li>Xì khô &amp; bảo dưỡng</li>
                   <li>Tùy theo tình trạng xe</li>
                 </ul>
               </article>
 
-              <article className="rounded-xl border border-primary/20 bg-background-dark/50 p-5">
-                <h4 className="mb-3 text-lg font-bold text-white">Vệ sinh nội thất chi tiết</h4>
-                <ul className="space-y-2 text-sm text-slate-300">
+              <article className="rounded-xl border border-primary/20 bg-primary/5 p-5">
+                <h3 className="mb-3 text-lg font-bold text-slate-900">Vệ sinh nội thất chi tiết</h3>
+                <ul className="space-y-2 text-sm text-slate-700">
                   <li>Rửa vỏ + vệ sinh nội thất</li>
                   <li>Nhanh + vệ sinh cốp, sàn, bánh</li>
                   <li>Dưỡng phục hồi các chi tiết</li>
@@ -127,10 +135,10 @@ function ServiceCeramicPage() {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-accent-red/40 bg-gradient-to-br from-primary/20 to-background-dark p-6 shadow-2xl shadow-accent-red/10 md:p-8">
-            <h3 className="mb-6 text-2xl font-black text-white">Dịch vụ khác</h3>
+          <div className="rounded-2xl border border-accent-red/30 bg-white p-6 shadow-sm md:p-8">
+            <h2 className="mb-6 text-2xl font-black text-slate-900">Dịch vụ khác</h2>
             <div className="overflow-x-auto rounded-xl border border-accent-red/40 ring-1 ring-accent-red/20">
-              <table className="min-w-full bg-background-dark/50 text-left text-sm text-slate-200">
+              <table className="min-w-full bg-white text-left text-sm text-slate-800">
                 <thead className="bg-accent-red text-xs font-bold tracking-wider text-white uppercase">
                   <tr>
                     <th className="px-4 py-4">Dịch vụ</th>
@@ -138,7 +146,7 @@ function ServiceCeramicPage() {
                     <th className="px-4 py-4">Big cars</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-primary/15">
+                <tbody className="divide-y divide-slate-200">
                   <tr>
                     <td className="px-4 py-4 font-semibold">Tẩy ố kính</td>
                     <td className="px-4 py-4">600.000 – 1.000.000</td>
@@ -167,7 +175,7 @@ function ServiceCeramicPage() {
                 </tbody>
               </table>
             </div>
-            <div className="mt-6 flex items-center gap-3 rounded-xl border border-accent-red/30 bg-accent-red/10 px-4 py-3 text-white">
+            <div className="mt-6 flex items-center gap-3 rounded-xl border border-accent-red/30 bg-accent-red/10 px-4 py-3 text-slate-900">
               <span className="material-symbols-outlined text-accent-red">call</span>
               <p className="text-sm font-semibold md:text-base">Hotline: 0274 3800 940 - 0981 946 652 - 0969 757 101 - 0938 981 978</p>
             </div>
@@ -175,8 +183,8 @@ function ServiceCeramicPage() {
         </section>
 
         <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-20">
-          <div className="rounded-3xl border border-primary/10 bg-primary/5 p-10 md:p-16">
-            <h2 className="mb-10 flex items-center gap-4 text-2xl font-black text-white sm:text-3xl">
+          <div className="rounded-3xl border border-primary/20 bg-white p-10 shadow-sm md:p-16">
+            <h2 className="mb-10 flex items-center gap-4 text-2xl font-black text-slate-900 sm:text-3xl">
               <span className="h-1 w-12 rounded-full bg-accent-red" />
               Quy trình dịch vụ tiêu chuẩn
             </h2>
@@ -185,8 +193,8 @@ function ServiceCeramicPage() {
                 <div className="mb-6 flex size-16 items-center justify-center rounded-2xl bg-primary/20 text-accent-red transition-all duration-300 group-hover:bg-accent-red group-hover:text-white">
                   <span className="material-symbols-outlined text-3xl">assignment_late</span>
                 </div>
-                <h4 className="mb-2 text-lg font-bold text-white">Tiếp nhận &amp; Kiểm tra</h4>
-                <p className="text-sm leading-relaxed text-slate-400">Sử dụng máy đo chuyên dụng để kiểm tra tình trạng bề mặt sơn và nội thất xe.</p>
+                <h3 className="mb-2 text-lg font-bold text-slate-900">Tiếp nhận &amp; Kiểm tra</h3>
+                <p className="text-sm leading-relaxed text-slate-600">Sử dụng máy đo chuyên dụng để kiểm tra tình trạng bề mặt sơn và nội thất xe.</p>
                 <div className="absolute top-8 -right-4 hidden text-primary/30 lg:block"><span className="material-symbols-outlined text-2xl">arrow_forward</span></div>
               </div>
 
@@ -194,8 +202,8 @@ function ServiceCeramicPage() {
                 <div className="mb-6 flex size-16 items-center justify-center rounded-2xl bg-primary/20 text-accent-red transition-all duration-300 group-hover:bg-accent-red group-hover:text-white">
                   <span className="material-symbols-outlined text-3xl">lightbulb</span>
                 </div>
-                <h4 className="mb-2 text-lg font-bold text-white">Tư vấn giải pháp</h4>
-                <p className="text-sm leading-relaxed text-slate-400">Đề xuất gói dịch vụ tối ưu dựa trên nhu cầu thực tế và ngân sách của khách hàng.</p>
+                <h3 className="mb-2 text-lg font-bold text-slate-900">Tư vấn giải pháp</h3>
+                <p className="text-sm leading-relaxed text-slate-600">Đề xuất gói dịch vụ tối ưu dựa trên nhu cầu thực tế và ngân sách của khách hàng.</p>
                 <div className="absolute top-8 -right-4 hidden text-primary/30 lg:block"><span className="material-symbols-outlined text-2xl">arrow_forward</span></div>
               </div>
 
@@ -203,8 +211,8 @@ function ServiceCeramicPage() {
                 <div className="mb-6 flex size-16 items-center justify-center rounded-2xl bg-primary/20 text-accent-red transition-all duration-300 group-hover:bg-accent-red group-hover:text-white">
                   <span className="material-symbols-outlined text-3xl">construction</span>
                 </div>
-                <h4 className="mb-2 text-lg font-bold text-white">Thực hiện dịch vụ</h4>
-                <p className="text-sm leading-relaxed text-slate-400">Đội ngũ kỹ thuật viên tay nghề cao thực hiện quy trình theo tiêu chuẩn khắt khe.</p>
+                <h3 className="mb-2 text-lg font-bold text-slate-900">Thực hiện dịch vụ</h3>
+                <p className="text-sm leading-relaxed text-slate-600">Đội ngũ kỹ thuật viên tay nghề cao thực hiện quy trình theo tiêu chuẩn khắt khe.</p>
                 <div className="absolute top-8 -right-4 hidden text-primary/30 lg:block"><span className="material-symbols-outlined text-2xl">arrow_forward</span></div>
               </div>
 
@@ -212,8 +220,8 @@ function ServiceCeramicPage() {
                 <div className="mb-6 flex size-16 items-center justify-center rounded-2xl bg-primary/20 text-accent-red transition-all duration-300 group-hover:bg-accent-red group-hover:text-white">
                   <span className="material-symbols-outlined text-3xl">verified_user</span>
                 </div>
-                <h4 className="mb-2 text-lg font-bold text-white">Bàn giao &amp; Bảo hành</h4>
-                <p className="text-sm leading-relaxed text-slate-400">Kiểm tra QC cuối cùng, kích hoạt bảo hành điện tử và hướng dẫn chăm sóc xe.</p>
+                <h3 className="mb-2 text-lg font-bold text-slate-900">Bàn giao &amp; Bảo hành</h3>
+                <p className="text-sm leading-relaxed text-slate-600">Kiểm tra QC cuối cùng, kích hoạt bảo hành điện tử và hướng dẫn chăm sóc xe.</p>
               </div>
             </div>
           </div>
@@ -230,7 +238,7 @@ function ServiceCeramicPage() {
                   <span className="material-symbols-outlined">call</span>
                   0981 946 652
                 </a>
-                <button className="flex items-center justify-center gap-3 rounded-xl border border-white/20 bg-white/10 px-10 py-4 text-lg font-black text-white transition-all hover:bg-white/20" type="button">
+                <button className="flex items-center justify-center gap-3 rounded-xl border border-white/40 bg-white/15 px-10 py-4 text-lg font-black text-white transition-all hover:bg-white/25" type="button">
                   <span className="material-symbols-outlined">chat_bubble</span>
                   Nhắn tin Zalo
                 </button>
